@@ -71,9 +71,12 @@ including its SHA-256.
 ## Citing
 
 The archived version of this repository, with the result files, carries its own
-DOI: [10.5281/zenodo.22965040](https://doi.org/10.5281/zenodo.22965040). That
-concept DOI always resolves to the most recent archived version. Please cite
-the paper as well once it appears.
+DOI. The paper cites
+[10.5281/zenodo.22965246](https://doi.org/10.5281/zenodo.22965246), the exact
+version v1.0.2 snapshot that produced its numbers;
+[10.5281/zenodo.22965040](https://doi.org/10.5281/zenodo.22965040) is the
+concept DOI and always resolves to the most recent version. Please cite the
+paper as well once it appears.
 
 ## License
 

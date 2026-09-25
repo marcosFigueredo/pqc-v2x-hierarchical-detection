@@ -10,7 +10,7 @@ abstract: >-
 type: software
 version: 1.0.2
 date-released: "2026-09-25"
-doi: 10.5281/zenodo.22965040
+doi: 10.5281/zenodo.22965246
 license: MIT
 repository-code: "https://github.com/marcosFigueredo/pqc-v2x-hierarchical-detection"
 url: "https://github.com/marcosFigueredo/pqc-v2x-hierarchical-detection"
