@@ -14,17 +14,50 @@
     "intelligent transportation systems"
   ],
   "creators": [
-    {"name": "Figueredo, Marcos Batista", "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"},
-    {"name": "Morais, Lizandra Santos", "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"},
-    {"name": "Murari, Thiago Barros", "affiliation": "Universidade SENAI-CIMATEC, Salvador, Bahia, Brazil"},
-    {"name": "Monteiro, Roberto Luiz Souza", "affiliation": "Universidade SENAI-CIMATEC, Salvador, Bahia, Brazil"},
-    {"name": "Silva, Alexandre do Nascimento", "affiliation": "Universidade Estadual de Santa Cruz, Ilheus, Bahia, Brazil"},
-    {"name": "Fontoura, Neraldo de Araujo", "affiliation": "Universidade Estadual de Santa Cruz, Ilheus, Bahia, Brazil"},
-    {"name": "Fontoura, Jose Roberto de Araujo", "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"},
-    {"name": "Silva, Matheus Bahia", "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"},
-    {"name": "Assis, Beatriz Souza de", "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"},
-    {"name": "Silva, Ed Frank dos Santos", "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"},
-    {"name": "Santos, Leandro Brito", "affiliation": "Universidade Federal do Reconcavo da Bahia, Feira de Santana, Bahia, Brazil"}
+    {
+      "name": "Figueredo, Marcos Batista",
+      "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"
+    },
+    {
+      "name": "Morais, Lizandra Santos",
+      "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"
+    },
+    {
+      "name": "Murari, Thiago Barros",
+      "affiliation": "Universidade SENAI-CIMATEC, Salvador, Bahia, Brazil"
+    },
+    {
+      "name": "Silva, Alexandre do Nascimento",
+      "affiliation": "Universidade Estadual de Santa Cruz, Ilheus, Bahia, Brazil"
+    },
+    {
+      "name": "Fontoura, Neraldo de Araujo",
+      "affiliation": "Universidade Estadual de Santa Cruz, Ilheus, Bahia, Brazil"
+    },
+    {
+      "name": "Fontoura, Jose Roberto de Araujo",
+      "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"
+    },
+    {
+      "name": "Silva, Matheus Bahia",
+      "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"
+    },
+    {
+      "name": "Santos, Leandro Brito",
+      "affiliation": "Universidade Federal do Reconcavo da Bahia, Feira de Santana, Bahia, Brazil"
+    },
+    {
+      "name": "Soares, Tais Souza de Andrade",
+      "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"
+    },
+    {
+      "name": "Lunkes, Aline de Lurdes Zuliani",
+      "affiliation": "Universidade Federal do Pampa, Rio Grande do Sul, Brazil"
+    },
+    {
+      "name": "Monteiro, Roberto Luiz Souza",
+      "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"
+    }
   ],
   "related_identifiers": [
     {
