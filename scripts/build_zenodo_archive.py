@@ -15,6 +15,9 @@ OUT = ROOT / "tmp" / "zenodo_archive.zip"
 # Directories copied whole, minus the exclusions below.
 INCLUDE_DIRS = ["src", "tests", "scripts", "results", "logs"]
 INCLUDE_FILES = [
+    "README.md",
+    "LICENSE",
+    "CITATION.cff",
     "REPRODUCING.md",
     ".zenodo.json",
     "requirements.txt",
