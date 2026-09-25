@@ -1,0 +1,67 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "PQ-V2X hierarchical versus flat intrusion detection: code, protocol and results"
+abstract: >-
+  Computational record for a leakage-aware comparison of a two-stage
+  hierarchical detector against a flat 24-class classifier for post-quantum
+  cryptography related attacks in vehicle-to-everything communications, on the
+  two five-million-record PQ-V2X releases. Contains the pipeline, the protocol
+  tests, the run logs and every result file behind the manuscript's tables.
+type: software
+version: 1.0.0
+date-released: "2026-09-25"
+license: MIT
+repository-code: "https://github.com/marcosFigueredo/pqc-v2x-hierarchical-detection"
+url: "https://github.com/marcosFigueredo/pqc-v2x-hierarchical-detection"
+keywords:
+  - post-quantum cryptography
+  - V2X security
+  - vehicular communications
+  - intrusion detection
+  - hierarchical classification
+  - leakage-aware evaluation
+  - intelligent transportation systems
+authors:
+  - family-names: Figueredo
+    given-names: Marcos Batista
+    affiliation: "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"
+  - family-names: Morais
+    given-names: Lizandra Santos
+    affiliation: "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"
+  - family-names: Murari
+    given-names: Thiago Barros
+    affiliation: "Universidade SENAI-CIMATEC, Salvador, Bahia, Brazil"
+  - family-names: Silva
+    given-names: Alexandre do Nascimento
+    affiliation: "Universidade Estadual de Santa Cruz, Ilheus, Bahia, Brazil"
+  - family-names: Fontoura
+    given-names: Neraldo de Araujo
+    affiliation: "Universidade Estadual de Santa Cruz, Ilheus, Bahia, Brazil"
+  - family-names: Fontoura
+    given-names: Jose Roberto de Araujo
+    affiliation: "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"
+  - family-names: Silva
+    given-names: Matheus Bahia
+    affiliation: "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"
+  - family-names: Santos
+    given-names: Leandro Brito
+    affiliation: "Universidade Federal do Reconcavo da Bahia, Feira de Santana, Bahia, Brazil"
+  - family-names: Soares
+    given-names: Tais Souza de Andrade
+    affiliation: "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"
+  - family-names: Lunkes
+    given-names: Aline de Lurdes Zuliani
+    affiliation: "Universidade Federal do Pampa, Rio Grande do Sul, Brazil"
+  - family-names: Monteiro
+    given-names: Roberto Luiz Souza
+    affiliation: "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"
+references:
+  - type: article
+    title: "PQ-V2X: A Novel Postquantum Cryptographic Dataset for Secure Vehicular Communications"
+    authors:
+      - family-names: Abdel Hakeem
+        given-names: Shimaa A.
+      - family-names: Kim
+        given-names: HyungWon
+    doi: "10.1109/JIOT.2025.3618153"
+    notes: "The dataset this software evaluates. It is not redistributed here."
