@@ -1,0 +1,16 @@
+{
+  "csv_stage1_macro_f1": 0.58641910922747,
+  "h5_stage1_macro_f1": 0.8796380886022248,
+  "csv_stage2_macro_f1": 0.42333661791840843,
+  "h5_stage2_macro_f1": 0.4288875511712223,
+  "csv_flat_24class_macro_f1": 0.38152565864562415,
+  "h5_flat_24class_macro_f1": 0.46730973383735447,
+  "csv_flat_family_derived_macro_f1": 0.49617613308966696,
+  "h5_flat_family_derived_macro_f1": 0.8725715373300906,
+  "csv_flat_subtype_pq_hybrid_macro_f1": 0.3756813488769522,
+  "h5_flat_subtype_pq_hybrid_macro_f1": 0.41303710822595024,
+  "csv_stage2_real_routing_macro_f1": 0.32357179490761756,
+  "h5_stage2_real_routing_macro_f1": 0.3752908150312204,
+  "csv_flat_real_routing_macro_f1": 0.3478798915557997,
+  "h5_flat_real_routing_macro_f1": 0.3903491000084
+}

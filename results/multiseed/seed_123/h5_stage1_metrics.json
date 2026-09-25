@@ -1,0 +1,96 @@
+{
+  "accuracy": 0.9480536753022211,
+  "macro_f1": 0.8853996286527286,
+  "confusion_matrix": [
+    [
+      56417,
+      11949,
+      0,
+      0
+    ],
+    [
+      16109,
+      63895,
+      0,
+      8897
+    ],
+    [
+      0,
+      0,
+      429267,
+      0
+    ],
+    [
+      0,
+      150,
+      0,
+      127611
+    ]
+  ],
+  "labels": [
+    "Classical",
+    "Hybrid",
+    "Normal",
+    "Post-Quantum"
+  ],
+  "by_model": {
+    "lightgbm": {
+      "accuracy": 0.9480536753022211,
+      "macro_f1": 0.8853996286527286,
+      "confusion_matrix": [
+        [
+          56417,
+          11949,
+          0,
+          0
+        ],
+        [
+          16109,
+          63895,
+          0,
+          8897
+        ],
+        [
+          0,
+          0,
+          429267,
+          0
+        ],
+        [
+          0,
+          150,
+          0,
+          127611
+        ]
+      ],
+      "labels": [
+        "Classical",
+        "Hybrid",
+        "Normal",
+        "Post-Quantum"
+      ]
+    }
+  },
+  "trivial_baselines": {
+    "majority_class": {
+      "label": "Normal",
+      "accuracy": 0.6009659874421632,
+      "macro_f1": 0.18768855558334396
+    },
+    "stratified_random": {
+      "accuracy": 0.41798416620583934,
+      "macro_f1": 0.2501374221600785,
+      "seed": 123
+    }
+  },
+  "convergence": {},
+  "provenance": {
+    "evaluation_partition": "test",
+    "n_eval_rows": 714295,
+    "n_train_rows": 3571606,
+    "n_val_rows_held_out_unused": 714099,
+    "seed": 123,
+    "split": "grouped_by_feature_identity",
+    "test_rows_with_feature_twin_in_train": 0.0
+  }
+}

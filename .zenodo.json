@@ -1,0 +1,37 @@
+{
+  "title": "Reversal of Hierarchical Advantage in V2X Intrusion Detection for Post-Quantum Intelligent Transportation Systems: code, protocol and results",
+  "description": "<p>Complete computational record for the study: source code, evaluation protocol, hyperparameters, random seeds, automated test suite, run logs, and all result files behind the manuscript's tables.</p><p>The study re-evaluates hierarchical versus flat intrusion detection on the PQ-V2X dataset under a leakage-aware protocol: splits are grouped by predictor-value identity, because neither 5,000,000-record release contains 5,000,000 independent observations. All reported metrics come from a held-out test partition; the validation partition is never read. Stage 2 of the cascade is scored under oracle routing, under routing predicted by Stage 1, and end-to-end over every truly PQ/Hybrid record including those the cascade never routed.</p><p>The PQ-V2X data itself is not redistributed here; it is available from its own authors (doi:10.1109/JIOT.2025.3618153).</p>",
+  "upload_type": "software",
+  "license": "mit",
+  "access_right": "open",
+  "keywords": [
+    "post-quantum cryptography",
+    "V2X security",
+    "vehicular communications",
+    "intrusion detection",
+    "hierarchical classification",
+    "leakage-aware evaluation",
+    "intelligent transportation systems"
+  ],
+  "creators": [
+    {"name": "Figueredo, Marcos Batista", "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"},
+    {"name": "Morais, Lizandra Santos", "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"},
+    {"name": "Murari, Thiago Barros", "affiliation": "Universidade SENAI-CIMATEC, Salvador, Bahia, Brazil"},
+    {"name": "Monteiro, Roberto Luiz Souza", "affiliation": "Universidade SENAI-CIMATEC, Salvador, Bahia, Brazil"},
+    {"name": "Silva, Alexandre do Nascimento", "affiliation": "Universidade Estadual de Santa Cruz, Ilheus, Bahia, Brazil"},
+    {"name": "Fontoura, Neraldo de Araujo", "affiliation": "Universidade Estadual de Santa Cruz, Ilheus, Bahia, Brazil"},
+    {"name": "Fontoura, Jose Roberto de Araujo", "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"},
+    {"name": "Silva, Matheus Bahia", "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"},
+    {"name": "Assis, Beatriz Souza de", "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"},
+    {"name": "Silva, Ed Frank dos Santos", "affiliation": "Universidade do Estado da Bahia, Alagoinhas, Bahia, Brazil"},
+    {"name": "Santos, Leandro Brito", "affiliation": "Universidade Federal do Reconcavo da Bahia, Feira de Santana, Bahia, Brazil"}
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.1109/JIOT.2025.3618153",
+      "relation": "isDerivedFrom",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+\begin{table}[!t]
+\caption{Multi-seed robustness on the test partition (LightGBM, mean $\pm$
+population standard deviation across seeds 42, 123, 2024; macro-F1
+unless noted)}
+\label{tab:multiseed}
+\centering
+\small
+\begin{tabular}{lrr}
+\toprule
+Metric & Original & Extended \\
+\midrule
+Stage 1 & 0.5865 $\pm$ 0.0023 & 0.8787 $\pm$ 0.0059 \\
+Stage 2, oracle & 0.4200 $\pm$ 0.0025 & 0.4306 $\pm$ 0.0043 \\
+Stage 2, predicted routing & 0.3168 $\pm$ 0.0099 & 0.3772 $\pm$ 0.0035 \\
+Flat, predicted routing & 0.3314 $\pm$ 0.0141 & 0.3935 $\pm$ 0.0026 \\
+Stage 2, end-to-end & 0.3666 $\pm$ 0.0021 & 0.4134 $\pm$ 0.0034 \\
+Flat, end-to-end & 0.3792 $\pm$ 0.0033 & 0.4140 $\pm$ 0.0010 \\
+Routing precision & 0.4361 $\pm$ 0.0053 & 0.9404 $\pm$ 0.0033 \\
+Routing recall & 0.8619 $\pm$ 0.0022 & 0.9234 $\pm$ 0.0020 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,4 @@
+=== split ablation: csv / grouped ===
+[11:16:08] [csv] reading parquet from C:\projetos\pqc-hierarchical-detection\data\processed\csv_corpus\data.parquet
+[11:16:11] [csv] loaded 5,000,000 rows, 55 cols in 2.8s
+[11:16:22] [csv] splitting (grouped by _dedup_group)

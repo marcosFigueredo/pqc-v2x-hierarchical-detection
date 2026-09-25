@@ -1,0 +1,80 @@
+{
+  "42": {
+    "csv": {
+      "stage1_macro_f1": 0.58641910922747,
+      "stage2_oracle_macro_f1": 0.42333661791840843,
+      "stage2_real_routing_macro_f1": 0.32357179490761756,
+      "flat_24class_macro_f1": 0.38152565864562415,
+      "flat_real_routing_macro_f1": 0.3478798915557997,
+      "stage2_end_to_end_macro_f1": 0.3694798249982258,
+      "flat_end_to_end_macro_f1": 0.3756813488769522,
+      "routing_precision": 0.4400773391946331,
+      "routing_recall": 0.8641921397379912,
+      "evaluation_partition": "test"
+    },
+    "h5": {
+      "stage1_macro_f1": 0.8796380886022248,
+      "stage2_oracle_macro_f1": 0.4288875511712223,
+      "stage2_real_routing_macro_f1": 0.3752908150312204,
+      "flat_24class_macro_f1": 0.46730973383735447,
+      "flat_real_routing_macro_f1": 0.3903491000084,
+      "stage2_end_to_end_macro_f1": 0.4111983956162943,
+      "flat_end_to_end_macro_f1": 0.41303710822595024,
+      "routing_precision": 0.9414102974699045,
+      "routing_recall": 0.9237338657128201,
+      "evaluation_partition": "test"
+    }
+  },
+  "123": {
+    "csv": {
+      "stage1_macro_f1": 0.5893467502998158,
+      "stage2_oracle_macro_f1": 0.4194941492019996,
+      "stage2_real_routing_macro_f1": 0.3239176951777403,
+      "flat_24class_macro_f1": 0.3821649185916234,
+      "flat_real_routing_macro_f1": 0.33291236289310033,
+      "stage2_end_to_end_macro_f1": 0.36493891536710626,
+      "flat_end_to_end_macro_f1": 0.38365437814840464,
+      "routing_precision": 0.43969271073034305,
+      "routing_recall": 0.8625,
+      "evaluation_partition": "test"
+    },
+    "h5": {
+      "stage1_macro_f1": 0.8853996286527286,
+      "stage2_oracle_macro_f1": 0.43644547160807445,
+      "stage2_real_routing_macro_f1": 0.38218288720208465,
+      "flat_24class_macro_f1": 0.47037426158500434,
+      "flat_real_routing_macro_f1": 0.39677239510780365,
+      "stage2_end_to_end_macro_f1": 0.4181062332625437,
+      "flat_end_to_end_macro_f1": 0.4154472909539381,
+      "routing_precision": 0.9437699409887907,
+      "routing_recall": 0.9256491678282301,
+      "evaluation_partition": "test"
+    }
+  },
+  "2024": {
+    "csv": {
+      "stage1_macro_f1": 0.5836038749400985,
+      "stage2_oracle_macro_f1": 0.41720144502426626,
+      "stage2_real_routing_macro_f1": 0.3028231520182383,
+      "flat_24class_macro_f1": 0.3793610745946216,
+      "flat_real_routing_macro_f1": 0.3135379891266838,
+      "stage2_end_to_end_macro_f1": 0.36531895450884194,
+      "flat_end_to_end_macro_f1": 0.37831024353484966,
+      "routing_precision": 0.42865296399806607,
+      "routing_recall": 0.8589366729678639,
+      "evaluation_partition": "test"
+    },
+    "h5": {
+      "stage1_macro_f1": 0.8710570946794647,
+      "stage2_oracle_macro_f1": 0.42639816205358483,
+      "stage2_real_routing_macro_f1": 0.3742680964025806,
+      "flat_24class_macro_f1": 0.46627584465067895,
+      "flat_real_routing_macro_f1": 0.39332494382381583,
+      "stage2_end_to_end_macro_f1": 0.410776268008202,
+      "flat_end_to_end_macro_f1": 0.41360744784963704,
+      "routing_precision": 0.9359545270147396,
+      "routing_recall": 0.9207051085046948,
+      "evaluation_partition": "test"
+    }
+  }
+}

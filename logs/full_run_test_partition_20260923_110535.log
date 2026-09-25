@@ -1,0 +1,117 @@
+[11:05:44] Reusing existing CSV Parquet cache -> C:\projetos\pqc-hierarchical-detection\data\processed\csv_corpus\data.parquet
+[11:05:44] Reusing existing H5 Parquet cache -> C:\projetos\pqc-hierarchical-detection\data\processed\h5_corpus\data.parquet
+[11:05:44] === Running CSV corpus ===
+[11:05:44] [csv] reading parquet from C:\projetos\pqc-hierarchical-detection\data\processed\csv_corpus\data.parquet
+[11:05:48] [csv] loaded 5,000,000 rows, 55 cols in 3.9s
+[11:06:02] [csv] splitting (grouped by _dedup_group)
+[11:09:01] [csv] split done in 179.3s: train=3,571,400 val=714,300 test=714,300
+[11:09:02] [csv] overlap assertion passed: no duplicate-feature groups span splits
+[11:09:02] [csv] evaluation partition = TEST (714,300 rows); val held out, unused
+[11:09:02] [csv] Stage 1: training models ['lightgbm', 'logreg', 'random_forest', 'mlp'] on 3,571,400 rows
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\utils\validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+[12:12:25] [csv] Stage 1 done in 3802.6s
+[12:12:47] [csv] Stage 1 macro_f1=0.5864 accuracy=0.5199
+[12:12:57] [csv] Stage 1 trivial floors: majority macro_f1=0.1871 (acc=0.5978), stratified macro_f1=0.2505
+[12:12:58] [csv] Stage 2: training models ['lightgbm', 'logreg', 'random_forest', 'mlp'] on PQ/Hybrid subset
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\impute\_base.py:635: UserWarning: Skipping features without any observed values: ['sequence_gap' 'timestamp_offset' 'message_frequency' 'source_entropy']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\impute\_base.py:635: UserWarning: Skipping features without any observed values: ['sequence_gap' 'timestamp_offset' 'message_frequency' 'source_entropy']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\utils\validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\impute\_base.py:635: UserWarning: Skipping features without any observed values: ['sequence_gap' 'timestamp_offset' 'message_frequency' 'source_entropy']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\utils\validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+[12:44:05] [csv] Stage 2 done in 1867.3s
+[12:44:06] [csv] Stage 2 (oracle-conditioned) macro_f1=0.4233
+[12:44:06] [csv] Stage 2 trivial floors: majority macro_f1=0.0078, stratified macro_f1=0.0525
+[12:44:06] [csv] Stage 2 REAL-routing macro_f1=0.3236 (routed 427,209 rows, routing precision=0.440 recall=0.864)
+[12:44:06] [csv] Flat baseline: training models ['lightgbm', 'logreg', 'random_forest', 'mlp'] on all 3,571,400 rows (24-class label)
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\utils\validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+[14:01:40] [csv] Flat baseline done in 4654.2s
+[14:02:07] [csv] Flat 24-class trivial floors: majority macro_f1=0.0312, stratified macro_f1=0.0414
+[14:02:07] [csv] Flat 24-class macro_f1=0.3815
+[14:02:07] [csv] Flat family-derived macro_f1=0.4962
+[14:02:07] [csv] Flat subtype(PQ/Hybrid subset) macro_f1=0.3757
+[14:02:07] [csv] Flat REAL-routing macro_f1=0.3479
+[14:02:07] [csv] END-TO-END subtype (all 217,550 true PQ/Hybrid rows, 29,545 never routed): stage2=0.3695 flat=0.3757
+[14:06:56] [csv] bootstrap real_routing_flat_minus_stage2: observed=+0.0243 95% CI [+0.0199, +0.0286] P(flat>stage2)=1.000
+[14:06:56] [csv] bootstrap end_to_end_flat_minus_stage2: observed=+0.0062 95% CI [+0.0048, +0.0076] P(flat>stage2)=1.000
+[14:06:56] [csv] bootstrap done in 288.9s (1000 resamples each)
+[14:07:03] [csv] wrote results/csv_stage1_metrics.json, csv_stage2_metrics.json, csv_real_vs_synthetic.json
+[14:07:03] [csv] wrote results/csv_flat_metrics.json
+[14:07:03] [csv] wrote results/csv_real_cascade_metrics.json
+[14:07:04] === Running H5 corpus ===
+[14:07:04] [h5] reading parquet from C:\projetos\pqc-hierarchical-detection\data\processed\h5_corpus\data.parquet
+[14:07:06] [h5] loaded 5,000,000 rows, 65 cols in 2.4s
+[14:07:13] [h5] splitting (grouped by _dedup_group)
+[14:08:43] [h5] split done in 89.3s: train=3,573,404 val=714,151 test=712,445
+[14:08:43] [h5] overlap assertion passed: no duplicate-feature groups span splits
+[14:08:43] [h5] evaluation partition = TEST (712,445 rows); val held out, unused
+[14:08:43] [h5] Stage 1: training models ['lightgbm', 'logreg', 'random_forest', 'mlp'] on 3,573,404 rows
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\utils\validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+[15:53:46] [h5] Stage 1 done in 6302.4s
+[15:54:07] [h5] Stage 1 macro_f1=0.8796 accuracy=0.9451
+[15:54:16] [h5] Stage 1 trivial floors: majority macro_f1=0.1876 (acc=0.6007), stratified macro_f1=0.2500
+[15:54:17] [h5] Stage 2: training models ['lightgbm', 'logreg', 'random_forest', 'mlp'] on PQ/Hybrid subset
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\utils\validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\linear_model\_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\utils\validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+[16:35:40] [h5] Stage 2 done in 2483.1s
+[16:35:40] [h5] Stage 2 (oracle-conditioned) macro_f1=0.4289
+[16:35:41] [h5] Stage 2 trivial floors: majority macro_f1=0.0075, stratified macro_f1=0.0529
+[16:35:41] [h5] Stage 2 REAL-routing macro_f1=0.3753 (routed 212,324 rows, routing precision=0.941 recall=0.924)
+[16:35:41] [h5] Flat baseline: training models ['lightgbm', 'logreg', 'random_forest', 'mlp'] on all 3,573,404 rows (24-class label)
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\utils\validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\linear_model\_logistic.py:465: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+[18:46:25] [h5] Flat baseline done in 7843.5s
+[18:47:03] [h5] Flat 24-class trivial floors: majority macro_f1=0.0313, stratified macro_f1=0.0414
+[18:47:03] [h5] Flat 24-class macro_f1=0.4673
+[18:47:03] [h5] Flat family-derived macro_f1=0.8726
+[18:47:03] [h5] Flat subtype(PQ/Hybrid subset) macro_f1=0.4130
+[18:47:03] [h5] Flat REAL-routing macro_f1=0.3903
+[18:47:03] [h5] END-TO-END subtype (all 216,387 true PQ/Hybrid rows, 16,503 never routed): stage2=0.4112 flat=0.4130
+[18:52:30] [h5] bootstrap real_routing_flat_minus_stage2: observed=+0.0151 95% CI [+0.0134, +0.0168] P(flat>stage2)=1.000
+[18:52:30] [h5] bootstrap end_to_end_flat_minus_stage2: observed=+0.0018 95% CI [+0.0001, +0.0034] P(flat>stage2)=0.985
+[18:52:30] [h5] bootstrap done in 326.1s (1000 resamples each)
+[18:52:41] [h5] wrote results/h5_stage1_metrics.json, h5_stage2_metrics.json, h5_real_vs_synthetic.json
+[18:52:41] [h5] wrote results/h5_flat_metrics.json
+[18:52:41] [h5] wrote results/h5_real_cascade_metrics.json
+[18:52:42] Total pipeline time: 28017.4s
+{
+  "csv_stage1_macro_f1": 0.58641910922747,
+  "h5_stage1_macro_f1": 0.8796380886022248,
+  "csv_stage2_macro_f1": 0.42333661791840843,
+  "h5_stage2_macro_f1": 0.4288875511712223,
+  "csv_flat_24class_macro_f1": 0.38152565864562415,
+  "h5_flat_24class_macro_f1": 0.46730973383735447,
+  "csv_flat_family_derived_macro_f1": 0.49617613308966696,
+  "h5_flat_family_derived_macro_f1": 0.8725715373300906,
+  "csv_flat_subtype_pq_hybrid_macro_f1": 0.3756813488769522,
+  "h5_flat_subtype_pq_hybrid_macro_f1": 0.41303710822595024,
+  "csv_stage2_real_routing_macro_f1": 0.32357179490761756,
+  "h5_stage2_real_routing_macro_f1": 0.3752908150312204,
+  "csv_flat_real_routing_macro_f1": 0.3478798915557997,
+  "h5_flat_real_routing_macro_f1": 0.3903491000084
+}

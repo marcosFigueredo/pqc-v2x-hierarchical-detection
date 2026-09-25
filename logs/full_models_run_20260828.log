@@ -1,0 +1,63 @@
+[18:37:09] Reusing existing CSV Parquet cache -> C:\projetos\pqc-hierarchical-detection\data\processed\csv_corpus\data.parquet
+[18:37:09] Reusing existing H5 Parquet cache -> C:\projetos\pqc-hierarchical-detection\data\processed\h5_corpus\data.parquet
+[18:37:09] === Running CSV corpus ===
+[18:37:09] [csv] reading parquet from C:\projetos\pqc-hierarchical-detection\data\processed\csv_corpus\data.parquet
+[18:37:12] [csv] loaded 5,000,000 rows, 55 cols in 3.2s
+[18:37:25] [csv] splitting (grouped by _dedup_group)
+[18:41:12] [csv] split done in 226.8s: train=3,571,400 val=714,300 test=714,300
+[18:41:16] [csv] overlap assertion passed: no duplicate-feature groups span splits
+[18:41:16] [csv] Stage 1: training models ['lightgbm', 'logreg', 'random_forest', 'mlp'] on 3,571,400 rows
+[20:12:27] [csv] Stage 1 done in 5471.2s
+[20:12:55] [csv] Stage 1 macro_f1=0.5848 accuracy=0.5186
+[20:12:56] [csv] Stage 2: training models ['lightgbm', 'logreg', 'random_forest', 'mlp'] on PQ/Hybrid subset
+[20:56:58] [csv] Stage 2 done in 2641.3s
+[20:56:58] [csv] Stage 2 (oracle-conditioned) macro_f1=0.4175
+[20:56:59] [csv] Stage 2 REAL-routing macro_f1=0.3036 (routed 422,606 rows, routing precision=0.436 recall=0.844)
+[20:56:59] [csv] Flat baseline: training models ['lightgbm', 'logreg', 'random_forest', 'mlp'] on all 3,571,400 rows (24-class label)
+[23:02:23] [csv] Flat baseline done in 7524.4s
+[23:03:11] [csv] Flat 24-class macro_f1=0.3820
+[23:03:11] [csv] Flat family-derived macro_f1=0.4879
+[23:03:11] [csv] Flat subtype(PQ/Hybrid subset) macro_f1=0.3800
+[23:03:11] [csv] Flat REAL-routing macro_f1=0.3222
+[23:03:24] [csv] wrote results/csv_stage1_metrics.json, csv_stage2_metrics.json, csv_real_vs_synthetic.json
+[23:03:24] [csv] wrote results/csv_flat_metrics.json
+[23:03:24] [csv] wrote results/csv_real_cascade_metrics.json
+[23:03:25] === Running H5 corpus ===
+[23:03:25] [h5] reading parquet from C:\projetos\pqc-hierarchical-detection\data\processed\h5_corpus\data.parquet
+[23:03:29] [h5] loaded 5,000,000 rows, 65 cols in 3.6s
+[23:03:42] [h5] splitting (grouped by _dedup_group)
+[23:06:27] [h5] split done in 165.3s: train=3,573,404 val=714,151 test=712,445
+[23:06:30] [h5] overlap assertion passed: no duplicate-feature groups span splits
+[23:06:30] [h5] Stage 1: training models ['lightgbm', 'logreg', 'random_forest', 'mlp'] on 3,573,404 rows
+[01:25:05] [h5] Stage 1 done in 8315.1s
+[01:25:34] [h5] Stage 1 macro_f1=0.8801 accuracy=0.9468
+[01:25:35] [h5] Stage 2: training models ['lightgbm', 'logreg', 'random_forest', 'mlp'] on PQ/Hybrid subset
+[02:18:18] [h5] Stage 2 done in 3163.0s
+[02:18:19] [h5] Stage 2 (oracle-conditioned) macro_f1=0.4339
+[02:18:19] [h5] Stage 2 REAL-routing macro_f1=0.3784 (routed 214,344 rows, routing precision=0.935 recall=0.933)
+[02:18:19] [h5] Flat baseline: training models ['lightgbm', 'logreg', 'random_forest', 'mlp'] on all 3,573,404 rows (24-class label)
+[04:40:18] [h5] Flat baseline done in 8519.0s
+[04:40:55] [h5] Flat 24-class macro_f1=0.4680
+[04:40:55] [h5] Flat family-derived macro_f1=0.8577
+[04:40:55] [h5] Flat subtype(PQ/Hybrid subset) macro_f1=0.4190
+[04:40:55] [h5] Flat REAL-routing macro_f1=0.3954
+[04:41:03] [h5] wrote results/h5_stage1_metrics.json, h5_stage2_metrics.json, h5_real_vs_synthetic.json
+[04:41:03] [h5] wrote results/h5_flat_metrics.json
+[04:41:03] [h5] wrote results/h5_real_cascade_metrics.json
+[04:41:04] Total pipeline time: 36234.6s
+{
+  "csv_stage1_macro_f1": 0.5848087545860621,
+  "h5_stage1_macro_f1": 0.8801297574057573,
+  "csv_stage2_macro_f1": 0.41754460497324514,
+  "h5_stage2_macro_f1": 0.4339187960988723,
+  "csv_flat_24class_macro_f1": 0.38196608106012925,
+  "h5_flat_24class_macro_f1": 0.46801437106584015,
+  "csv_flat_family_derived_macro_f1": 0.48785892664289665,
+  "h5_flat_family_derived_macro_f1": 0.857684653047597,
+  "csv_flat_subtype_pq_hybrid_macro_f1": 0.38001853485541687,
+  "h5_flat_subtype_pq_hybrid_macro_f1": 0.41899812025339384,
+  "csv_stage2_real_routing_macro_f1": 0.3036152568609884,
+  "h5_stage2_real_routing_macro_f1": 0.3784128161890193,
+  "csv_flat_real_routing_macro_f1": 0.3222409253648321,
+  "h5_flat_real_routing_macro_f1": 0.39538791857384875
+}

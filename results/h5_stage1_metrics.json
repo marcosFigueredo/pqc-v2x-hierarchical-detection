@@ -1,0 +1,215 @@
+{
+  "accuracy": 0.9451101488535957,
+  "macro_f1": 0.8796380886022248,
+  "confusion_matrix": [
+    [
+      55652,
+      12440,
+      0,
+      0
+    ],
+    [
+      16503,
+      63129,
+      0,
+      10113
+    ],
+    [
+      0,
+      0,
+      427966,
+      0
+    ],
+    [
+      0,
+      50,
+      0,
+      126592
+    ]
+  ],
+  "labels": [
+    "Classical",
+    "Hybrid",
+    "Normal",
+    "Post-Quantum"
+  ],
+  "by_model": {
+    "lightgbm": {
+      "accuracy": 0.9451101488535957,
+      "macro_f1": 0.8796380886022248,
+      "confusion_matrix": [
+        [
+          55652,
+          12440,
+          0,
+          0
+        ],
+        [
+          16503,
+          63129,
+          0,
+          10113
+        ],
+        [
+          0,
+          0,
+          427966,
+          0
+        ],
+        [
+          0,
+          50,
+          0,
+          126592
+        ]
+      ],
+      "labels": [
+        "Classical",
+        "Hybrid",
+        "Normal",
+        "Post-Quantum"
+      ]
+    },
+    "logreg": {
+      "accuracy": 0.9413765273108802,
+      "macro_f1": 0.8700323003701194,
+      "confusion_matrix": [
+        [
+          61817,
+          6275,
+          0,
+          0
+        ],
+        [
+          25296,
+          54304,
+          0,
+          10145
+        ],
+        [
+          0,
+          0,
+          427966,
+          0
+        ],
+        [
+          0,
+          50,
+          0,
+          126592
+        ]
+      ],
+      "labels": [
+        "Classical",
+        "Hybrid",
+        "Normal",
+        "Post-Quantum"
+      ]
+    },
+    "random_forest": {
+      "accuracy": 0.9454119265346799,
+      "macro_f1": 0.8800855460137982,
+      "confusion_matrix": [
+        [
+          49263,
+          18479,
+          350,
+          0
+        ],
+        [
+          9705,
+          69683,
+          500,
+          9857
+        ],
+        [
+          0,
+          0,
+          427966,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          126642
+        ]
+      ],
+      "labels": [
+        "Classical",
+        "Hybrid",
+        "Normal",
+        "Post-Quantum"
+      ]
+    },
+    "mlp": {
+      "accuracy": 0.9291524258012899,
+      "macro_f1": 0.8561092887061872,
+      "confusion_matrix": [
+        [
+          53426,
+          14566,
+          50,
+          50
+        ],
+        [
+          14606,
+          66045,
+          97,
+          8997
+        ],
+        [
+          87,
+          50,
+          427829,
+          0
+        ],
+        [
+          0,
+          11972,
+          0,
+          114670
+        ]
+      ],
+      "labels": [
+        "Classical",
+        "Hybrid",
+        "Normal",
+        "Post-Quantum"
+      ]
+    }
+  },
+  "trivial_baselines": {
+    "majority_class": {
+      "label": "Normal",
+      "accuracy": 0.6007004049435395,
+      "macro_f1": 0.1876367379830605
+    },
+    "stratified_random": {
+      "accuracy": 0.41677041736555104,
+      "macro_f1": 0.24995621971365298,
+      "seed": 42
+    }
+  },
+  "convergence": {
+    "logreg": {
+      "max_iter": 200,
+      "n_iter": 158,
+      "converged": true
+    },
+    "mlp": {
+      "max_iter": 300,
+      "n_iter": 153,
+      "converged": true
+    }
+  },
+  "provenance": {
+    "evaluation_partition": "test",
+    "n_eval_rows": 712445,
+    "n_train_rows": 3573404,
+    "n_val_rows_held_out_unused": 714151,
+    "seed": 42,
+    "split": "grouped_by_feature_identity",
+    "test_rows_with_feature_twin_in_train": 0.0
+  }
+}

@@ -1,0 +1,5 @@
+wrote generated/tab_stage_by_model.tex
+wrote generated/tab_flat_vs_hier.tex
+wrote generated/tab_bootstrap.tex
+wrote generated/tab_multiseed.tex
+csv_real_vs_synthetic.json reports evaluation_partition=None, not 'test'. These results predate the test-partition correction; re-run `python -m src.run_pipeline` before generating tables.

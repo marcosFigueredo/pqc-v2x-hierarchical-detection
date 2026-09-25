@@ -1,0 +1,69 @@
+[11:33:30] Reusing existing CSV Parquet cache -> C:\projetos\pqc-hierarchical-detection\data\processed\csv_corpus\data.parquet
+[11:33:30] Reusing existing H5 Parquet cache -> C:\projetos\pqc-hierarchical-detection\data\processed\h5_corpus\data.parquet
+[11:33:30] === Running CSV corpus ===
+[11:33:30] [csv] reading parquet from C:\projetos\pqc-hierarchical-detection\data\processed\csv_corpus\data.parquet
+[11:33:34] [csv] loaded 5,000,000 rows, 55 cols in 4.1s
+[11:33:49] [csv] splitting (grouped by _dedup_group)
+[11:37:59] [csv] split done in 249.8s: train=3,571,400 val=714,300 test=714,300
+[11:38:03] [csv] overlap assertion passed: no duplicate-feature groups span splits
+[11:38:03] [csv] Stage 1: training models ['lightgbm'] on 3,571,400 rows
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\utils\validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+[11:44:06] [csv] Stage 1 done in 362.5s
+[11:44:16] [csv] Stage 1 macro_f1=0.5848 accuracy=0.5186
+[11:44:16] [csv] Stage 2: training models ['lightgbm'] on PQ/Hybrid subset
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\impute\_base.py:635: UserWarning: Skipping features without any observed values: ['sequence_gap' 'timestamp_offset' 'message_frequency' 'source_entropy']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\impute\_base.py:635: UserWarning: Skipping features without any observed values: ['sequence_gap' 'timestamp_offset' 'message_frequency' 'source_entropy']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\utils\validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+[11:49:22] [csv] Stage 2 done in 306.4s
+[11:49:22] [csv] Stage 2 macro_f1=0.4175
+[11:49:22] [csv] Flat baseline: training models ['lightgbm'] on all 3,571,400 rows (24-class label)
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\utils\validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+[12:15:54] [csv] Flat baseline done in 1591.3s
+[12:15:54] [csv] Flat 24-class macro_f1=0.3820
+[12:16:07] [csv] Flat family-derived macro_f1=0.4879
+[12:16:08] [csv] Flat subtype(PQ/Hybrid subset) macro_f1=0.3282
+[12:16:22] [csv] wrote results/csv_stage1_metrics.json, csv_stage2_metrics.json, csv_real_vs_synthetic.json
+[12:16:22] [csv] wrote results/csv_flat_metrics.json
+[12:16:23] === Running H5 corpus ===
+[12:16:23] [h5] reading parquet from C:\projetos\pqc-hierarchical-detection\data\processed\h5_corpus\data.parquet
+[12:16:26] [h5] loaded 5,000,000 rows, 65 cols in 3.9s
+[12:16:42] [h5] splitting (grouped by _dedup_group)
+[12:20:54] [h5] split done in 252.3s: train=3,573,404 val=714,151 test=712,445
+[12:20:57] [h5] overlap assertion passed: no duplicate-feature groups span splits
+[12:20:57] [h5] Stage 1: training models ['lightgbm'] on 3,573,404 rows
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\utils\validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+[12:29:12] [h5] Stage 1 done in 495.0s
+[12:29:24] [h5] Stage 1 macro_f1=0.8801 accuracy=0.9468
+[12:29:24] [h5] Stage 2: training models ['lightgbm'] on PQ/Hybrid subset
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\utils\validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+[12:35:28] [h5] Stage 2 done in 364.4s
+[12:35:28] [h5] Stage 2 macro_f1=0.4339
+[12:35:28] [h5] Flat baseline: training models ['lightgbm'] on all 3,573,404 rows (24-class label)
+C:\Users\marco\AppData\Roaming\Python\Python311\site-packages\sklearn\utils\validation.py:2739: UserWarning: X does not have valid feature names, but LGBMClassifier was fitted with feature names
+  warnings.warn(
+[12:56:27] [h5] Flat baseline done in 1259.1s
+[12:56:28] [h5] Flat 24-class macro_f1=0.4680
+[12:56:41] [h5] Flat family-derived macro_f1=0.8577
+[12:56:41] [h5] Flat subtype(PQ/Hybrid subset) macro_f1=0.3791
+[12:56:51] [h5] wrote results/h5_stage1_metrics.json, h5_stage2_metrics.json, h5_real_vs_synthetic.json
+[12:56:51] [h5] wrote results/h5_flat_metrics.json
+[12:56:52] Total pipeline time: 5001.3s
+{
+  "csv_stage1_macro_f1": 0.5848087545860621,
+  "h5_stage1_macro_f1": 0.8801297574057573,
+  "csv_stage2_macro_f1": 0.41754460497324514,
+  "h5_stage2_macro_f1": 0.4339187960988723,
+  "csv_flat_24class_macro_f1": 0.38196608106012925,
+  "h5_flat_24class_macro_f1": 0.46801437106584015,
+  "csv_flat_family_derived_macro_f1": 0.48785892664289665,
+  "h5_flat_family_derived_macro_f1": 0.857684653047597,
+  "csv_flat_subtype_pq_hybrid_macro_f1": 0.32819782555695093,
+  "h5_flat_subtype_pq_hybrid_macro_f1": 0.3790935373721182
+}

@@ -1,0 +1,18 @@
+\begin{table*}[!t]
+\caption{Split ablation (LightGBM, identical data, model, and scale; only the
+splitting rule changes). Twinned is the share of test rows holding an exact
+predictor-value twin in the training partition}
+\label{tab:split_ablation}
+\centering
+\small
+\begin{tabular}{llrrr}
+\toprule
+Release & Split & Twinned & Stage 1 & Flat 24-class \\
+\midrule
+Original & Grouped by feature identity & 0.0\% & 0.5864 & 0.3815 \\
+Original & Plain random & 100.0\% & 0.6773 & 0.6795 \\
+Extended & Grouped by feature identity & 0.0\% & 0.8796 & 0.4673 \\
+Extended & Plain random & 100.0\% & 0.9809 & 0.9947 \\
+\bottomrule
+\end{tabular}
+\end{table*}

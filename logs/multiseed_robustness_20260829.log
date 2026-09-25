@@ -1,0 +1,192 @@
+=== Robustness run seed=42 ===
+[09:52:08] [csv] reading parquet from C:\projetos\pqc-hierarchical-detection\data\processed\csv_corpus\data.parquet
+[09:52:11] [csv] loaded 5,000,000 rows, 55 cols in 2.8s
+[09:52:17] [csv] splitting (grouped by _dedup_group)
+[09:53:52] [csv] split done in 94.9s: train=3,571,400 val=714,300 test=714,300
+[09:53:54] [csv] overlap assertion passed: no duplicate-feature groups span splits
+[09:53:54] [csv] Stage 1: training models ['lightgbm'] on 3,571,400 rows
+[09:56:59] [csv] Stage 1 done in 185.0s
+[09:57:04] [csv] Stage 1 macro_f1=0.5848 accuracy=0.5186
+[09:57:04] [csv] Stage 2: training models ['lightgbm'] on PQ/Hybrid subset
+[10:02:45] [csv] Stage 2 done in 340.9s
+[10:02:45] [csv] Stage 2 (oracle-conditioned) macro_f1=0.4175
+[10:02:46] [csv] Stage 2 REAL-routing macro_f1=0.3036 (routed 422,606 rows, routing precision=0.436 recall=0.844)
+[10:02:46] [csv] Flat baseline: training models ['lightgbm'] on all 3,571,400 rows (24-class label)
+[10:17:54] [csv] Flat baseline done in 908.8s
+[10:18:18] [csv] Flat 24-class macro_f1=0.3820
+[10:18:18] [csv] Flat family-derived macro_f1=0.4879
+[10:18:18] [csv] Flat subtype(PQ/Hybrid subset) macro_f1=0.3800
+[10:18:18] [csv] Flat REAL-routing macro_f1=0.3222
+[10:18:39] [csv] wrote results/csv_stage1_metrics.json, csv_stage2_metrics.json, csv_real_vs_synthetic.json
+[10:18:39] [csv] wrote results/csv_flat_metrics.json
+[10:18:39] [csv] wrote results/csv_real_cascade_metrics.json
+[10:18:40] [h5] reading parquet from C:\projetos\pqc-hierarchical-detection\data\processed\h5_corpus\data.parquet
+[10:18:48] [h5] loaded 5,000,000 rows, 65 cols in 8.2s
+[10:19:13] [h5] splitting (grouped by _dedup_group)
+[10:23:46] [h5] split done in 272.5s: train=3,573,404 val=714,151 test=712,445
+[10:23:48] [h5] overlap assertion passed: no duplicate-feature groups span splits
+[10:23:48] [h5] Stage 1: training models ['lightgbm'] on 3,573,404 rows
+[10:28:54] [h5] Stage 1 done in 306.0s
+[10:29:00] [h5] Stage 1 macro_f1=0.8801 accuracy=0.9468
+[10:29:00] [h5] Stage 2: training models ['lightgbm'] on PQ/Hybrid subset
+[10:34:26] [h5] Stage 2 done in 325.7s
+[10:34:26] [h5] Stage 2 (oracle-conditioned) macro_f1=0.4339
+[10:34:26] [h5] Stage 2 REAL-routing macro_f1=0.3784 (routed 214,344 rows, routing precision=0.935 recall=0.933)
+[10:34:26] [h5] Flat baseline: training models ['lightgbm'] on all 3,573,404 rows (24-class label)
+[10:55:33] [h5] Flat baseline done in 1266.5s
+[10:55:46] [h5] Flat 24-class macro_f1=0.4680
+[10:55:46] [h5] Flat family-derived macro_f1=0.8577
+[10:55:46] [h5] Flat subtype(PQ/Hybrid subset) macro_f1=0.4190
+[10:55:46] [h5] Flat REAL-routing macro_f1=0.3954
+[10:55:55] [h5] wrote results/h5_stage1_metrics.json, h5_stage2_metrics.json, h5_real_vs_synthetic.json
+[10:55:55] [h5] wrote results/h5_flat_metrics.json
+[10:55:55] [h5] wrote results/h5_real_cascade_metrics.json
+=== Robustness run seed=123 ===
+[10:55:55] [csv] reading parquet from C:\projetos\pqc-hierarchical-detection\data\processed\csv_corpus\data.parquet
+[10:55:58] [csv] loaded 5,000,000 rows, 55 cols in 3.1s
+[10:56:07] [csv] splitting (grouped by _dedup_group)
+[10:57:48] [csv] split done in 100.7s: train=3,571,400 val=714,300 test=714,300
+[10:57:49] [csv] overlap assertion passed: no duplicate-feature groups span splits
+[10:57:49] [csv] Stage 1: training models ['lightgbm'] on 3,571,400 rows
+[11:00:50] [csv] Stage 1 done in 180.8s
+[11:00:53] [csv] Stage 1 macro_f1=0.5841 accuracy=0.5178
+[11:00:54] [csv] Stage 2: training models ['lightgbm'] on PQ/Hybrid subset
+[11:05:06] [csv] Stage 2 done in 252.1s
+[11:05:06] [csv] Stage 2 (oracle-conditioned) macro_f1=0.4218
+[11:05:06] [csv] Stage 2 REAL-routing macro_f1=0.3039 (routed 423,701 rows, routing precision=0.437 recall=0.860)
+[11:05:06] [csv] Flat baseline: training models ['lightgbm'] on all 3,571,400 rows (24-class label)
+[11:24:20] [csv] Flat baseline done in 1154.2s
+[11:24:33] [csv] Flat 24-class macro_f1=0.3823
+[11:24:33] [csv] Flat family-derived macro_f1=0.4867
+[11:24:33] [csv] Flat subtype(PQ/Hybrid subset) macro_f1=0.3810
+[11:24:33] [csv] Flat REAL-routing macro_f1=0.3159
+[11:24:38] [csv] wrote results/csv_stage1_metrics.json, csv_stage2_metrics.json, csv_real_vs_synthetic.json
+[11:24:38] [csv] wrote results/csv_flat_metrics.json
+[11:24:38] [csv] wrote results/csv_real_cascade_metrics.json
+[11:24:39] [h5] reading parquet from C:\projetos\pqc-hierarchical-detection\data\processed\h5_corpus\data.parquet
+[11:24:42] [h5] loaded 5,000,000 rows, 65 cols in 2.9s
+[11:24:48] [h5] splitting (grouped by _dedup_group)
+[11:26:21] [h5] split done in 92.7s: train=3,571,606 val=714,099 test=714,295
+[11:26:22] [h5] overlap assertion passed: no duplicate-feature groups span splits
+[11:26:22] [h5] Stage 1: training models ['lightgbm'] on 3,571,606 rows
+[11:29:42] [h5] Stage 1 done in 199.6s
+[11:29:45] [h5] Stage 1 macro_f1=0.8785 accuracy=0.9446
+[11:29:46] [h5] Stage 2: training models ['lightgbm'] on PQ/Hybrid subset
+[11:33:30] [h5] Stage 2 done in 224.5s
+[11:33:30] [h5] Stage 2 (oracle-conditioned) macro_f1=0.4289
+[11:33:30] [h5] Stage 2 REAL-routing macro_f1=0.3756 (routed 216,424 rows, routing precision=0.939 recall=0.929)
+[11:33:30] [h5] Flat baseline: training models ['lightgbm'] on all 3,571,606 rows (24-class label)
+[11:47:24] [h5] Flat baseline done in 833.1s
+[11:47:34] [h5] Flat 24-class macro_f1=0.4679
+[11:47:34] [h5] Flat family-derived macro_f1=0.8644
+[11:47:34] [h5] Flat subtype(PQ/Hybrid subset) macro_f1=0.4172
+[11:47:34] [h5] Flat REAL-routing macro_f1=0.3922
+[11:47:39] [h5] wrote results/h5_stage1_metrics.json, h5_stage2_metrics.json, h5_real_vs_synthetic.json
+[11:47:39] [h5] wrote results/h5_flat_metrics.json
+[11:47:39] [h5] wrote results/h5_real_cascade_metrics.json
+=== Robustness run seed=2024 ===
+[11:47:39] [csv] reading parquet from C:\projetos\pqc-hierarchical-detection\data\processed\csv_corpus\data.parquet
+[11:47:41] [csv] loaded 5,000,000 rows, 55 cols in 2.2s
+[11:47:47] [csv] splitting (grouped by _dedup_group)
+[11:49:10] [csv] split done in 82.6s: train=3,571,350 val=714,300 test=714,350
+[11:49:11] [csv] overlap assertion passed: no duplicate-feature groups span splits
+[11:49:11] [csv] Stage 1: training models ['lightgbm'] on 3,571,350 rows
+[11:51:33] [csv] Stage 1 done in 142.7s
+[11:51:37] [csv] Stage 1 macro_f1=0.5864 accuracy=0.5198
+[11:51:37] [csv] Stage 2: training models ['lightgbm'] on PQ/Hybrid subset
+[11:55:14] [csv] Stage 2 done in 216.9s
+[11:55:14] [csv] Stage 2 (oracle-conditioned) macro_f1=0.4186
+[11:55:15] [csv] Stage 2 REAL-routing macro_f1=0.3087 (routed 418,804 rows, routing precision=0.435 recall=0.844)
+[11:55:15] [csv] Flat baseline: training models ['lightgbm'] on all 3,571,350 rows (24-class label)
+[12:07:00] [csv] Flat baseline done in 705.2s
+[12:07:10] [csv] Flat 24-class macro_f1=0.3803
+[12:07:10] [csv] Flat family-derived macro_f1=0.4908
+[12:07:10] [csv] Flat subtype(PQ/Hybrid subset) macro_f1=0.3762
+[12:07:10] [csv] Flat REAL-routing macro_f1=0.3361
+[12:07:15] [csv] wrote results/csv_stage1_metrics.json, csv_stage2_metrics.json, csv_real_vs_synthetic.json
+[12:07:15] [csv] wrote results/csv_flat_metrics.json
+[12:07:15] [csv] wrote results/csv_real_cascade_metrics.json
+[12:07:16] [h5] reading parquet from C:\projetos\pqc-hierarchical-detection\data\processed\h5_corpus\data.parquet
+[12:07:18] [h5] loaded 5,000,000 rows, 65 cols in 2.7s
+[12:07:25] [h5] splitting (grouped by _dedup_group)
+[12:08:47] [h5] split done in 81.7s: train=3,574,360 val=713,318 test=712,322
+[12:08:48] [h5] overlap assertion passed: no duplicate-feature groups span splits
+[12:08:48] [h5] Stage 1: training models ['lightgbm'] on 3,574,360 rows
+[12:11:59] [h5] Stage 1 done in 190.9s
+[12:12:03] [h5] Stage 1 macro_f1=0.8747 accuracy=0.9434
+[12:12:03] [h5] Stage 2: training models ['lightgbm'] on PQ/Hybrid subset
+[12:16:16] [h5] Stage 2 done in 253.3s
+[12:16:16] [h5] Stage 2 (oracle-conditioned) macro_f1=0.4426
+[12:16:16] [h5] Stage 2 REAL-routing macro_f1=0.3839 (routed 215,519 rows, routing precision=0.936 recall=0.924)
+[12:16:16] [h5] Flat baseline: training models ['lightgbm'] on all 3,574,360 rows (24-class label)
+[12:32:58] [h5] Flat baseline done in 1001.7s
+[12:33:09] [h5] Flat 24-class macro_f1=0.4739
+[12:33:09] [h5] Flat family-derived macro_f1=0.8648
+[12:33:09] [h5] Flat subtype(PQ/Hybrid subset) macro_f1=0.4202
+[12:33:09] [h5] Flat REAL-routing macro_f1=0.3977
+[12:33:14] [h5] wrote results/h5_stage1_metrics.json, h5_stage2_metrics.json, h5_real_vs_synthetic.json
+[12:33:14] [h5] wrote results/h5_flat_metrics.json
+[12:33:14] [h5] wrote results/h5_real_cascade_metrics.json
+{
+  "42": {
+    "csv": {
+      "stage1_macro_f1": 0.5848087545860621,
+      "stage2_oracle_macro_f1": 0.41754460497324514,
+      "stage2_real_routing_macro_f1": 0.3036152568609884,
+      "flat_24class_macro_f1": 0.38196608106012925,
+      "flat_real_routing_macro_f1": 0.3222409253648321,
+      "routing_precision": 0.43599712261539114,
+      "routing_recall": 0.8442382588774341
+    },
+    "h5": {
+      "stage1_macro_f1": 0.8801297574057573,
+      "stage2_oracle_macro_f1": 0.4339187960988723,
+      "stage2_real_routing_macro_f1": 0.3784128161890193,
+      "flat_24class_macro_f1": 0.46801437106584015,
+      "flat_real_routing_macro_f1": 0.39538791857384875,
+      "routing_precision": 0.9348617176128093,
+      "routing_recall": 0.9334637691286423
+    }
+  },
+  "123": {
+    "csv": {
+      "stage1_macro_f1": 0.5841294297407983,
+      "stage2_oracle_macro_f1": 0.42176374124539145,
+      "stage2_real_routing_macro_f1": 0.3038524659102196,
+      "flat_24class_macro_f1": 0.3823307809587717,
+      "flat_real_routing_macro_f1": 0.3159189806836725,
+      "routing_precision": 0.4369826835433478,
+      "routing_recall": 0.8597631762247504
+    },
+    "h5": {
+      "stage1_macro_f1": 0.8785047924504551,
+      "stage2_oracle_macro_f1": 0.4288526319357377,
+      "stage2_real_routing_macro_f1": 0.3755555501106813,
+      "flat_24class_macro_f1": 0.46785977352949915,
+      "flat_real_routing_macro_f1": 0.3921763758963469,
+      "routing_precision": 0.9388838576128341,
+      "routing_recall": 0.9292956548383998
+    }
+  },
+  "2024": {
+    "csv": {
+      "stage1_macro_f1": 0.5863890297242479,
+      "stage2_oracle_macro_f1": 0.4186360673529939,
+      "stage2_real_routing_macro_f1": 0.30866549149587946,
+      "flat_24class_macro_f1": 0.3803454640954395,
+      "flat_real_routing_macro_f1": 0.33609188915309934,
+      "routing_precision": 0.43493137601360066,
+      "routing_recall": 0.8444645340751044
+    },
+    "h5": {
+      "stage1_macro_f1": 0.8746910851762496,
+      "stage2_oracle_macro_f1": 0.44262349628712166,
+      "stage2_real_routing_macro_f1": 0.38386848311850597,
+      "flat_24class_macro_f1": 0.47392978849151185,
+      "flat_real_routing_macro_f1": 0.39766128043699955,
+      "routing_precision": 0.9355926855636858,
+      "routing_recall": 0.923987059287161
+    }
+  }
+}
+Wrote C:\projetos\pqc-hierarchical-detection\results\multiseed\summary.json

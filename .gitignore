@@ -1,0 +1,38 @@
+# Raw and processed data are not redistributed; see REPRODUCING.md
+data/processed/*
+!data/processed/.gitkeep
+*.csv
+*.h5
+*.parquet
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Scratch space, including the Zenodo archive the build script writes
+tmp/
+
+# LaTeX build artifacts. The submission PDF is tracked on purpose;
+# run logs under logs/ are results and must stay tracked.
+ojits-latex-template/*.aux
+ojits-latex-template/*.bbl
+ojits-latex-template/*.blg
+ojits-latex-template/*.fdb_latexmk
+ojits-latex-template/*.fls
+ojits-latex-template/*.log
+ojits-latex-template/*.out
+ojits-latex-template/*.synctex.gz
+ojits-latex-template/*.toc
+ojits-latex-template/*.xdv
+
+# Editors and OS
+.qodo/
+.remember/
+.idea/
+.vscode/
+desktop.ini
+.DS_Store
+Thumbs.db

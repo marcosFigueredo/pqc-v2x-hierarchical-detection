@@ -1,0 +1,9 @@
+[chain] waiting for main run (pid 11564) to finish...
+[chain] main run finished at Wed Sep 23 18:53:11 BST 2026
+[chain] starting multi-seed robustness at Wed Sep 23 18:53:11 BST 2026
+[chain] multi-seed exit=0 at Wed Sep 23 21:21:46 BST 2026
+[chain] starting split ablation at Wed Sep 23 21:21:46 BST 2026
+[chain] split ablation exit=0 at Wed Sep 23 22:44:10 BST 2026
+[chain] regenerating tables and figures from results/
+[chain] table generation exit=1 at Wed Sep 23 22:44:10 BST 2026
+[chain] all done at Wed Sep 23 22:44:10 BST 2026

@@ -1,0 +1,63 @@
+\begin{figure}[!t]
+\centering
+\begin{tikzpicture}[
+  every node/.style={font=\tiny},
+  cell/.style={draw=gray!50, minimum width=1.0cm, minimum height=0.68cm, align=center},
+  lbl/.style={font=\scriptsize},
+]
+\node[font=\small\bfseries] at (2.45,1.35) {Original release};
+\node[lbl] at (1.4,0.90) {Cla};
+\node[lbl] at (2.4,0.90) {Hyb};
+\node[lbl] at (3.4,0.90) {Nor};
+\node[lbl] at (4.4,0.90) {PQ};
+\node[lbl] at (0.0,0.34) {Cla};
+\node[cell, fill=blue!70, text=white] at (1.4,0.34) {69.7};
+\node[cell, fill=blue!0] at (2.4,0.34) {0.2};
+\node[cell, fill=blue!30] at (3.4,0.34) {30.1};
+\node[cell, fill=blue!0] at (4.4,0.34) {0.0};
+\node[lbl] at (0.0,-0.34) {Hyb};
+\node[cell, fill=blue!5] at (1.4,-0.34) {4.7};
+\node[cell, fill=blue!72, text=white] at (2.4,-0.34) {71.9};
+\node[cell, fill=blue!14] at (3.4,-0.34) {13.8};
+\node[cell, fill=blue!10] at (4.4,-0.34) {9.6};
+\node[lbl] at (0.0,-1.02) {Nor};
+\node[cell, fill=blue!10] at (1.4,-1.02) {10.4};
+\node[cell, fill=blue!0] at (2.4,-1.02) {0.3};
+\node[cell, fill=blue!34] at (3.4,-1.02) {33.6};
+\node[cell, fill=blue!56, text=white] at (4.4,-1.02) {55.7};
+\node[lbl] at (0.0,-1.70) {PQ};
+\node[cell, fill=blue!0] at (1.4,-1.70) {0.0};
+\node[cell, fill=blue!0] at (2.4,-1.70) {0.0};
+\node[cell, fill=blue!10] at (3.4,-1.70) {10.2};
+\node[cell, fill=blue!90, text=white] at (4.4,-1.70) {89.8};
+\node[font=\small\bfseries] at (2.45,-2.5) {Extended release};
+\node[lbl] at (1.4,-2.95) {Cla};
+\node[lbl] at (2.4,-2.95) {Hyb};
+\node[lbl] at (3.4,-2.95) {Nor};
+\node[lbl] at (4.4,-2.95) {PQ};
+\node[lbl] at (0.0,-3.51) {Cla};
+\node[cell, fill=blue!82, text=white] at (1.4,-3.51) {81.7};
+\node[cell, fill=blue!18] at (2.4,-3.51) {18.3};
+\node[cell, fill=blue!0] at (3.4,-3.51) {0.0};
+\node[cell, fill=blue!0] at (4.4,-3.51) {0.0};
+\node[lbl] at (0.0,-4.19) {Hyb};
+\node[cell, fill=blue!18] at (1.4,-4.19) {18.4};
+\node[cell, fill=blue!70, text=white] at (2.4,-4.19) {70.3};
+\node[cell, fill=blue!0] at (3.4,-4.19) {0.0};
+\node[cell, fill=blue!11] at (4.4,-4.19) {11.3};
+\node[lbl] at (0.0,-4.87) {Nor};
+\node[cell, fill=blue!0] at (1.4,-4.87) {0.0};
+\node[cell, fill=blue!0] at (2.4,-4.87) {0.0};
+\node[cell, fill=blue!100, text=white] at (3.4,-4.87) {100.0};
+\node[cell, fill=blue!0] at (4.4,-4.87) {0.0};
+\node[lbl] at (0.0,-5.55) {PQ};
+\node[cell, fill=blue!0] at (1.4,-5.55) {0.0};
+\node[cell, fill=blue!0] at (2.4,-5.55) {0.0};
+\node[cell, fill=blue!0] at (3.4,-5.55) {0.0};
+\node[cell, fill=blue!100, text=white] at (4.4,-5.55) {100.0};
+\end{tikzpicture}
+\caption{Stage 1 confusion matrices on the test partition (LightGBM,
+row-normalized \%). Rows are the true family, columns the predicted family.
+Cla = Classical, Hyb = Hybrid, Nor = Normal, PQ = Post-Quantum.}
+\label{fig:confusion_stage1}
+\end{figure}

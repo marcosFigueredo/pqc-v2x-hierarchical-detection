@@ -1,0 +1,26 @@
+\begin{table}[!t]
+\caption{Flat baseline versus hierarchical architecture on the test partition
+(LightGBM, macro-F1). Oracle supplies the true family; Predicted scores only
+the rows Stage 1 routed; End-to-end scores every truly PQ/Hybrid row, counting
+those the cascade never routed as errors. Better value of each pair in bold}
+\label{tab:flat_vs_hier}
+\centering
+\small
+\begin{tabular}{lllrr}
+\toprule
+Level & Model & Condition & Original & Extended \\
+\midrule
+Family ($\mathcal{F}$) & $f_1$ (Stage 1) &  & \textbf{0.5864} & \textbf{0.8796} \\
+Family ($\mathcal{F}$) & $f_{\mathrm{flat}}$ &  & 0.4962 & 0.8726 \\
+\midrule
+Subtype ($\mathcal{Y}_q$) & $f_2$ (Stage 2) & Oracle & \textbf{0.4233} & \textbf{0.4289} \\
+Subtype ($\mathcal{Y}_q$) & $f_{\mathrm{flat}}$ & Oracle & 0.3757 & 0.4130 \\
+\midrule
+Subtype ($\mathcal{Y}_q$) & $f_2$ (cascade) & Predicted & 0.3236 & 0.3753 \\
+Subtype ($\mathcal{Y}_q$) & $f_{\mathrm{flat}}$ & Predicted & \textbf{0.3479} & \textbf{0.3903} \\
+\midrule
+Subtype ($\mathcal{Y}_q$) & $f_2$ (cascade) & End-to-end & 0.3695 & 0.4112 \\
+Subtype ($\mathcal{Y}_q$) & $f_{\mathrm{flat}}$ & End-to-end & \textbf{0.3757} & \textbf{0.4130} \\
+\bottomrule
+\end{tabular}
+\end{table}

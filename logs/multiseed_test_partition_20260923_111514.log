@@ -1,0 +1,4 @@
+=== Robustness run seed=42 ===
+[11:15:20] [csv] reading parquet from C:\projetos\pqc-hierarchical-detection\data\processed\csv_corpus\data.parquet
+[11:15:26] [csv] loaded 5,000,000 rows, 55 cols in 5.4s
+[11:15:44] [csv] splitting (grouped by _dedup_group)
