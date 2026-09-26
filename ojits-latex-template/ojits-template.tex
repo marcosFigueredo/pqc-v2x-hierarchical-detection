@@ -765,25 +765,48 @@ and three random seeds. The Stage 1 confusion matrix and training times
 complement the performance comparison by describing routing behavior and
 computational cost.
 
-\subsection{Answer to the Research Question}
-At the family level, Stage 1 exceeds the flat baseline in both releases,
-with macro-F1 values of 0.5864 versus 0.4962 in the original release and
-0.8796 versus 0.8726 in the extended release. At the subtype level, Stage 2
-also exceeds the flat classifier under oracle routing, reaching 0.4233 versus
-0.3757 and 0.4289 versus 0.4130 in the original and extended releases,
-respectively. Under predicted routing, the relation reverses and the flat
-classifier reaches 0.3479 versus 0.3236 and 0.3903 versus 0.3753. The
-three-seed analysis preserves this relation in both releases, establishing the
-reversal as the central empirical finding.
+\subsection{Findings Relative to the Stated Hypothesis}
+The problem formulation stated that the hierarchy changes family-level
+decisions, whereas subtype behavior depends on the routing produced by
+Stage 1, and it named four aspects to examine. Each is taken in turn.
 
-\subsection{Implications for Intelligent Transportation Systems}
+At the family level, Stage 1 exceeds the flat baseline in both releases, with
+macro-F1 of 0.5864 against 0.4962 in the original release and 0.8796 against
+0.8726 in the extended release. The margin is wide in the first case and
+narrow in the second.
+
+At the subtype level under oracle routing, Stage 2 exceeds the flat
+classifier, reaching 0.4233 against 0.3757 and 0.4289 against 0.4130.
+
+Under predicted routing the relation reverses and the flat classifier reaches
+0.3479 against 0.3236 and 0.3903 against 0.3753. Scored end-to-end over every
+truly PQ/Hybrid record, the flat classifier again leads in the original
+release, 0.3757 against 0.3695, whereas in the extended release the two values
+lie within 0.002 of each other and one seed reverses their order, so no
+ordering is claimed for that scope in that release.
+
+The patterns persist unevenly. The reversal under predicted routing holds in
+both releases and in all three seeds, and its paired bootstrap interval
+excludes zero. Across trace types the picture is not uniform, since records
+with real traces carry the higher Stage 1 value in the original release and
+the lower one in the extended release, which is an observed association rather
+than a property of the architectures compared here.
+
+The hypothesis is supported in substance. The two architectures do differ at
+the family level, and subtype behavior does depend on the routing, to the
+point of reversing which architecture leads. What the hypothesis did not
+anticipate is that the size of that reversal, and in one release its
+direction, depend on which rows the comparison scores. Separately from the
+hypothesis, the splitting-rule ablation bounds what these numbers would have
+been under a random split, where the same models reach macro-F1 above 0.98.
+
+\subsection{Design Considerations for Vehicular Deployment}
 In a vehicular security architecture, an intrusion detector operates on messages that may represent normal cooperative traffic or various attack families. The family-level decision organizes message forwarding and determines which specialized analysis is executed next. The observed Stage 1 values show that this stage has its own behavior and should be evaluated separately from subtype classification. This separation matters because a family decision is not only an intermediate model output; it also governs the operational analysis path of the record.
 
 These findings bear on how detection is organized across On-Board Units (OBUs), Roadside Units (RSUs), and Mobile Edge Computing (MEC) servers. The considerations below follow from the detection results reported here; this study measures training cost on a general-purpose CPU and does not measure inference latency, memory, or energy on vehicular hardware, so they are design implications rather than deployment measurements.
-\begin{itemize}
-    \item \textbf{Routing risk is an architectural cost, not only a metric.} A single-pass flat classifier has no forwarding decision that can fail, so it cannot lose a record to misrouting. The cascade can. In the original release a substantial share of the records reaching Stage 2 do not belong to its label space at all, while some genuine PQC-related attacks never arrive. For a safety-relevant detector this is a qualitatively different failure mode from an ordinary misclassification, because the record leaves the analysis path entirely.
-    \item \textbf{Where a hierarchy remains attractive.} If a hierarchical architecture is chosen, the family stage is the natural place to partition work, with a lightweight Stage 1 triaging traffic locally on the OBU or RSU and suspected PQC-related payloads offloaded to MEC or Traffic Management Center infrastructure for subtype classification. Our results indicate that such a design should gate that offload on calibrated confidence rather than on the arg-max family decision, since it is precisely the unconditional forwarding of the arg-max decision that produces the reversal reported here. Confidence-gated routing was not evaluated in this study and remains an open direction.
-\end{itemize}
+A single-pass flat classifier has no forwarding decision that can fail, so it cannot lose a record to misrouting. The cascade can. In the original release a substantial share of the records reaching Stage 2 do not belong to its label space at all, while some genuine PQC-related attacks never arrive. For a safety-relevant detector this is a qualitatively different failure mode from an ordinary misclassification, because the record leaves the analysis path entirely.
+
+If a hierarchical architecture is chosen, the family stage is the natural place to partition work, with a lightweight Stage 1 triaging traffic locally on the OBU or RSU and suspected PQC-related payloads offloaded to MEC or Traffic Management Center infrastructure for subtype classification. These results suggest gating that offload on calibrated confidence rather than on the arg-max family decision, since the unconditional forwarding of the arg-max decision is what produces the reversal reported here. Confidence-gated routing was not evaluated in this study and remains an open direction.
 
 This distinction directly affects the system-level result. When forwarding is incorrect, a record may not reach the subtype classifier associated with its family, and the error becomes part of the final cascade decision. Joint analysis at the family and subtype levels therefore provides separate information about the initial decision, second-stage specialization, and error propagation between stages.
 
